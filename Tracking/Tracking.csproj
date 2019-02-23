@@ -93,6 +93,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\CustomViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\CameraView.xaml.cs">
       <DependentUpon>CameraView.xaml</DependentUpon>
     </Compile>
@@ -153,11 +155,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -170,6 +173,20 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\MapControl\MapControl.csproj">
+      <Project>{6a12d9c6-07eb-48df-8f3c-d9e0fb524770}</Project>
+      <Name>MapControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\NavigControl\NavigControl.csproj">
+      <Project>{55b27b72-3de6-445f-9f94-75fb42d69264}</Project>
+      <Name>NavigControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\TabControl\TabControl.csproj">
+      <Project>{8c568fda-a006-4474-89a6-b960fb1912a5}</Project>
+      <Name>TabControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

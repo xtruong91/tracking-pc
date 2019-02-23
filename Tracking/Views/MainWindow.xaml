@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tracking"
         xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding Title}"
+        Height="450" Width="800"
+        >
+  <Window.Resources>
+    <Style TargetType="TabItem">
+      <Setter Property="Header" Value="{Binding DataContext.Title}" />
+    </Style>
+  </Window.Resources>
+  
   <DockPanel>
     <Menu DockPanel.Dock="Top">
       <MenuItem Header="_File">
@@ -21,17 +30,33 @@
         <MenuItem Header="_Camera" Click="Camera_ItemClick" />
         <MenuItem Header="_Chart" Click="Char_ItemClick" />
       </MenuItem>
+
+      <MenuItem Header="_Edit">
+        <MenuItem Header="_Show groups" IsCheckable="True" IsChecked="{Binding IsEnabled}" />
+        <MenuItem Header="_Delete" Command ="{Binding ExecuteDelegateCommand}" />
+        <MenuItem Header="_Undo" Command="{Binding DelegateCommandObservesProperty}" />
+        <MenuItem Header="_Redo" Command="{Binding DelegateCommandObservesCanExecute}" />
+        <Separator />
+        <MenuItem Header="_Exit"  Command="{Binding ExecuteGenericDelegateCommand}" />
+      </MenuItem>
     </Menu>
+    
     <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-      </Grid.RowDefinitions>
-      <StackPanel prism:RegionManager.RegionName="ContentMap" Grid.Row="0" Background="Green" />
-      <StackPanel prism:RegionManager.RegionName="ContentChart" Grid.Row="1"  Background="Red" />
-      <StackPanel prism:RegionManager.RegionName="ContentCamera" Grid.Row="2" Background="White" />
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="8*" />
+        <ColumnDefinition Width="2*"/>
+      </Grid.ColumnDefinitions>
+      <ContentControl Grid.Column="0" prism:RegionManager.RegionName="LeftRegion" />
+      <TabControl Grid.Column="1" Margin="10" prism:RegionManager.RegionName="ContentRegion" />
+      <ContentControl Grid.Column="2" prism:RegionManager.RegionName="RightRegion" />
+      <!--<StackPanel prism:RegionManager.RegionName="ContentRegion" Grid.Row="0" Background="White" />-->
+      <StatusBar  Height="50" DockPanel.Dock="Bottom">
+        <TextBlock Text="{Binding UpdateText}" Margin="10" FontSize="22"/>
+      </StatusBar>
     </Grid>
+
+
   </DockPanel>
 
 </Window>
