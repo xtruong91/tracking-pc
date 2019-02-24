@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabControl", "Modules\TabCo
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Common", "Modules\Common\Common.shproj", "{403C9EFB-1EF6-4CA7-B76F-60BB2FA13F47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "Modules\Helper\Helper.csproj", "{D8DB1D5A-B528-4A38-98DD-CCA8E7973452}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Modules\Common\Common.projitems*{403c9efb-1ef6-4ca7-b76f-60bb2fa13f47}*SharedItemsImports = 13
@@ -42,6 +44,10 @@ Global
 		{8C568FDA-A006-4474-89A6-B960FB1912A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C568FDA-A006-4474-89A6-B960FB1912A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C568FDA-A006-4474-89A6-B960FB1912A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8DB1D5A-B528-4A38-98DD-CCA8E7973452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DB1D5A-B528-4A38-98DD-CCA8E7973452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DB1D5A-B528-4A38-98DD-CCA8E7973452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DB1D5A-B528-4A38-98DD-CCA8E7973452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{55B27B72-3DE6-445F-9F94-75FB42D69264} = {2052F9DB-AFD1-47EC-BA28-2D7E4858544A}
 		{8C568FDA-A006-4474-89A6-B960FB1912A5} = {2052F9DB-AFD1-47EC-BA28-2D7E4858544A}
 		{403C9EFB-1EF6-4CA7-B76F-60BB2FA13F47} = {2052F9DB-AFD1-47EC-BA28-2D7E4858544A}
+		{D8DB1D5A-B528-4A38-98DD-CCA8E7973452} = {2052F9DB-AFD1-47EC-BA28-2D7E4858544A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C009C09C-70A2-41BF-B920-20EAB954B9D1}

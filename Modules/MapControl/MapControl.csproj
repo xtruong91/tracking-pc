@@ -62,8 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MapControlModule.cs" />
+    <Compile Include="Models\InfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\InforDetailViewModel.cs" />
+    <Compile Include="ViewModels\InforListViewModel.cs" />
     <Compile Include="ViewModels\MessageViewModel.cs" />
+    <Compile Include="Views\InfoList.xaml.cs">
+      <DependentUpon>InfoList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InforDetail.xaml.cs">
+      <DependentUpon>InforDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MapControlView.xaml.cs">
       <DependentUpon>MapControlView.xaml</DependentUpon>
     </Compile>
@@ -72,6 +81,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\InfoList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InforDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MapControlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,7 +98,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{d8db1d5a-b528-4a38-98dd-cca8e7973452}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\Common\Common.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

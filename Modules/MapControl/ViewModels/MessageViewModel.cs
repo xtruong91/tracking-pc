@@ -1,4 +1,5 @@
-﻿using Common.EventAggregator;
+﻿
+using Helper;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;

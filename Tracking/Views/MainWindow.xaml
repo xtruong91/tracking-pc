@@ -47,13 +47,16 @@
         <ColumnDefinition Width="8*" />
         <ColumnDefinition Width="2*"/>
       </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="9*" />
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
       <ContentControl Grid.Column="0" prism:RegionManager.RegionName="LeftRegion" />
       <TabControl Grid.Column="1" Margin="10" prism:RegionManager.RegionName="ContentRegion" />
       <ContentControl Grid.Column="2" prism:RegionManager.RegionName="RightRegion" />
+
+      <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding UpdateText}" Margin="10" FontSize="22"/>
       <!--<StackPanel prism:RegionManager.RegionName="ContentRegion" Grid.Row="0" Background="White" />-->
-      <StatusBar  Height="50" DockPanel.Dock="Bottom">
-        <TextBlock Text="{Binding UpdateText}" Margin="10" FontSize="22"/>
-      </StatusBar>
     </Grid>
 
 

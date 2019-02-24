@@ -1,4 +1,5 @@
-﻿using Common.EventAggregator;
+﻿
+using Helper;
 using Prism.Events;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;
@@ -19,9 +20,11 @@ namespace NavigControl.ViewModels
     public MessageListViewModel(IEventAggregator ea)
     {
       _ea = ea;
+      
       Messages = new ObservableCollection<string>();
-
-      _ea.GetEvent<MessageSentEvent>().Subscribe(MessageReceived);
+      _ea.GetEvent<MessageSentEvent>().Subscribe(MessageReceived, ThreadOption.PublisherThread);
+      //Filtering events
+      //_ea.GetEvent<MessageSentEvent>().Subscribe(MessageReceived, ThreadOption.PublisherThread, false, (filter) => filter.Contains("Brian"));
     }
 
     private void MessageReceived(string message)
