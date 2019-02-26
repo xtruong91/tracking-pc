@@ -5,6 +5,13 @@
              xmlns:local="clr-namespace:Tracking"
               >
     <Application.Resources>
+      
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles/Light.xaml"/>
+        <ResourceDictionary Source="Styles/Common.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
          
     </Application.Resources>
 </prism:PrismApplication>

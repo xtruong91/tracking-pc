@@ -1,19 +1,17 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Tracking.Views.RemoteControl.Styles">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <!--<FontFamily x:Key="FontAwesome4">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>-->
   <FontFamily x:Key="FontAwesomeSolid">/Fonts/fa-solid-900.ttf#Font Awesome 5 Free</FontFamily>
   <FontFamily x:Key="FontAwesome">/Fonts/fa-regular-400.ttf#Font Awesome 5 Free</FontFamily>
 
-  <Style x:Key="MainWindowStyle" TargetType="Window">
+  <Style x:Key="MainWindowStyle" TargetType="UserControl">
     <Setter Property="Background" Value="{DynamicResource BackgroundBrush1}" />
     <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
     <Setter Property="FontFamily" Value="Segoe UI" />
     <Setter Property="FontSize" Value="16" />
     <Setter Property="FontWeight" Value="Medium" />
     <Setter Property="SnapsToDevicePixels" Value="true" />
-    <Setter Property="WindowStyle" Value="None" />
     <Setter Property="WindowChrome.WindowChrome">
       <Setter.Value>
         <WindowChrome CaptionHeight="0" GlassFrameThickness="1" ResizeBorderThickness="4" />

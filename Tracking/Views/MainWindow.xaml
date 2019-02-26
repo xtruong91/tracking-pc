@@ -8,15 +8,72 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Title="{Binding Title}"
-        Height="450" Width="800"
         >
   <Window.Resources>
     <Style TargetType="TabItem">
       <Setter Property="Header" Value="{Binding DataContext.Title}" />
     </Style>
   </Window.Resources>
-  
-  <DockPanel>
+
+  <Grid>
+    <Ribbon x:Name="Ribbon" SelectedIndex="0">
+      <!-- Help Pane, located at the right-hand side -->
+      <Ribbon.HelpPaneContent>
+        <RibbonButton SmallImageSource="..\Styles\Images\Ribbon\Alert04.ico" />
+      </Ribbon.HelpPaneContent>
+      <!-- Quick Access Toolbar - located at the upper-left corner -->
+      <Ribbon.QuickAccessToolBar>
+        <RibbonQuickAccessToolBar>
+          <RibbonButton x:Name ="Save" SmallImageSource="..\Styles\Images\Ribbon\SmallIcon.png" />
+          <RibbonSplitButton x:Name ="Undo" SmallImageSource="..\Styles\Images\Ribbon\Plus.ico" >
+            <RibbonSplitMenuItem Header="Undo action #1" />
+            <RibbonSplitMenuItem Header="Undo action #2" />
+            <RibbonSplitMenuItem Header="Undo action #3" />
+          </RibbonSplitButton>
+          <RibbonSplitButton x:Name="Redo" SmallImageSource="..\Styles\Images\Ribbon\Minus.ico" >
+            <RibbonSplitMenuItem Header="Redo action #1" />
+            <RibbonSplitMenuItem Header="Redo action #2" />
+          </RibbonSplitButton>
+        </RibbonQuickAccessToolBar>
+      </Ribbon.QuickAccessToolBar>
+      <!-- Application Menu, located at the left-hand side (down arrow) -->
+      <Ribbon.ApplicationMenu>
+        <RibbonApplicationMenu KeyTip="F">
+          <RibbonApplicationMenuItem Header="Options" ImageSource="..\Styles\Images\Ribbon\.jpg" />
+          <RibbonApplicationMenuItem Header="Exit" ImageSource="Images\Tulips.jpg" />
+        </RibbonApplicationMenu>
+      </Ribbon.ApplicationMenu>
+      <!-- Ribbon Tab #1: Home -->
+      <RibbonTab Header="Home" KeyTip="H" >
+        <!-- Home/Clipboard group-->
+        <RibbonGroup x:Name="ClipboardGroup" Header="Clipboard">
+          <RibbonMenuButton LargeImageSource="Images\Tulips.jpg" Label="Paste" KeyTip="V">
+            <RibbonMenuItem ImageSource="Images\Tulips.jpg" Header="Keep Text Only" KeyTip="T"/>
+            <RibbonMenuItem ImageSource="Images\Tulips.jpg" Header="Paste Special..." KeyTip="S"/>
+          </RibbonMenuButton>
+          <RibbonButton SmallImageSource="Images\Tulips.jpg" Label="Cut" KeyTip="X" />
+          <RibbonButton SmallImageSource="Images\Tulips.jpg" Label="Copy" KeyTip="C" />
+          <RibbonButton SmallImageSource="Images\Tulips.jpg" Label="Format Painter" KeyTip="FP" />
+        </RibbonGroup>
+        <!-- Home/Colors group-->
+        <RibbonGroup x:Name="Color" Header="Colors">
+          <RibbonRadioButton LargeImageSource="Images\Tulips.jpg" Label="Red" KeyTip="R" IsChecked="True"/>
+          <RibbonRadioButton LargeImageSource="Images\Tulips.jpg" Label="Green" KeyTip="G"/>
+          <RibbonRadioButton LargeImageSource="Images\Tulips.jpg" Label="Blue" KeyTip="B"/>
+        </RibbonGroup>
+      </RibbonTab>
+      <!-- Ribbon Tab #2: Launch -->
+      <RibbonTab Header="Launch" KeyTip="L">
+        <!-- Launch/Applications group-->
+        <RibbonGroup x:Name="DesktopApplication" Header="Desktop Applications">
+        </RibbonGroup>
+        <!-- Launch/Games group-->
+        <RibbonGroup x:Name="App" Header="Apps">
+        </RibbonGroup>
+      </RibbonTab>
+    </Ribbon>
+  </Grid>
+  <!--<DockPanel>
     <Menu DockPanel.Dock="Top">
       <MenuItem Header="_File">
         <MenuItem Header="_New" />
@@ -56,10 +113,10 @@
       <ContentControl Grid.Column="2" prism:RegionManager.RegionName="RightRegion" />
 
       <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding UpdateText}" Margin="10" FontSize="22"/>
-      <!--<StackPanel prism:RegionManager.RegionName="ContentRegion" Grid.Row="0" Background="White" />-->
+      --><!--<StackPanel prism:RegionManager.RegionName="ContentRegion" Grid.Row="0" Background="White" />--><!--
     </Grid>
 
 
-  </DockPanel>
+  </DockPanel>-->
 
 </Window>

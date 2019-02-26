@@ -66,6 +66,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\packages\Prism.Wpf.7.1.0.431\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -95,13 +96,13 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\CustomViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\CameraView.xaml.cs">
+    <Compile Include="Views\CameraControl\CameraView.xaml.cs">
       <DependentUpon>CameraView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChartView.xaml.cs">
+    <Compile Include="Views\ChartControl\ChartView.xaml.cs">
       <DependentUpon>ChartView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MapView.xaml.cs">
+    <Compile Include="Views\MapControl\MapView.xaml.cs">
       <DependentUpon>MapView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RemoteControl\BlockControl.xaml.cs">
@@ -113,12 +114,15 @@
     <Compile Include="Views\RemoteControl\BlockManager.cs" />
     <Compile Include="Views\RemoteControl\BlockTypes.cs" />
     <Compile Include="Views\RemoteControl\DragPannel.cs" />
+    <Compile Include="Views\RemoteControl\RemoteView.xaml.cs">
+      <DependentUpon>RemoteView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StackPanelRegionAdapter.cs" />
-    <Page Include="Views\CameraView.xaml">
+    <Page Include="Views\CameraControl\CameraView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ChartView.xaml">
+    <Page Include="Views\ChartControl\ChartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,7 +138,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\MapView.xaml">
+    <Page Include="Views\MapControl\MapView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,15 +150,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RemoteControl\Styles\Common.xaml">
+    <Page Include="Views\RemoteControl\RemoteView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RemoteControl\Styles\Dark.xaml">
+    <Page Include="Styles\Common.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RemoteControl\Styles\Light.xaml">
+    <Page Include="Styles\Dark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Light.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,8 +190,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Views\RemoteControl\Styles\Fonts\fa-regular-400.ttf" />
-    <Resource Include="Views\RemoteControl\Styles\Fonts\fa-solid-900.ttf" />
+    <Resource Include="Styles\Fonts\fa-regular-400.ttf" />
+    <Resource Include="Styles\Fonts\fa-solid-900.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -220,13 +228,31 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\RemoteControl\Styles\Images\blockBrush.png" />
-    <Resource Include="Views\RemoteControl\Styles\Images\blockBulb.png" />
-    <Resource Include="Views\RemoteControl\Styles\Images\blockCoffee.png" />
-    <Resource Include="Views\RemoteControl\Styles\Images\blockGlasses.png" />
-    <Resource Include="Views\RemoteControl\Styles\Images\blockPalette.png" />
-    <Resource Include="Views\RemoteControl\Styles\Images\blockPencil.png" />
-    <Resource Include="Views\RemoteControl\Styles\Images\group.png" />
+    <Resource Include="Styles\Images\blockBrush.png" />
+    <Resource Include="Styles\Images\blockBulb.png" />
+    <Resource Include="Styles\Images\blockCoffee.png" />
+    <Resource Include="Styles\Images\blockGlasses.png" />
+    <Resource Include="Styles\Images\blockPalette.png" />
+    <Resource Include="Styles\Images\blockPencil.png" />
+    <Resource Include="Styles\Images\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\Images\Ribbon\Alert04.ico" />
+    <Resource Include="Styles\Images\Ribbon\LargeIcon.png" />
+    <Resource Include="Styles\Images\Ribbon\MediaL.png" />
+    <Resource Include="Styles\Images\Ribbon\MediaS.png" />
+    <Resource Include="Styles\Images\Ribbon\Minus.ico" />
+    <Resource Include="Styles\Images\Ribbon\OfficeL.png" />
+    <Resource Include="Styles\Images\Ribbon\OfficeS.png" />
+    <Resource Include="Styles\Images\Ribbon\open.png" />
+    <Resource Include="Styles\Images\Ribbon\PersonL.png" />
+    <Resource Include="Styles\Images\Ribbon\PersonS.png" />
+    <Resource Include="Styles\Images\Ribbon\Plus.ico" />
+    <Resource Include="Styles\Images\Ribbon\SafariL.png" />
+    <Resource Include="Styles\Images\Ribbon\SafariS.png" />
+    <Resource Include="Styles\Images\Ribbon\Sign 05.ico" />
+    <Resource Include="Styles\Images\Ribbon\SmallIcon.png" />
+    <Resource Include="Styles\Images\Ribbon\Symantec.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

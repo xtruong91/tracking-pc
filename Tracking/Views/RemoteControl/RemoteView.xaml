@@ -4,7 +4,7 @@
         Style="{DynamicResource MainWindowStyle}"
         Height="602" Width="800" MinHeight="300" MinWidth="708"
         ButtonBase.Click="ButtonBase_Click" PreviewKeyDown="OnPreviewKeyDown" 
-        AllowDrop="True" Drop="Page_Drop" Closing="Window_Closing">
+        AllowDrop="True" Drop="Page_Drop">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="32"/>
@@ -20,10 +20,11 @@
         <ColumnDefinition />
       </Grid.ColumnDefinitions>
 
-      <Image Grid.Column="0" Source="Images/blockPalette.png" />
+      <!--<Image Grid.Column="0" Source="../../Styles/Images/blockPalette.png" />-->
       <!-- Left-align path unless it's too long, then right-align -->
       <DockPanel Grid.Column="1" Margin="5,0,20,0" LastChildFill="False">
-        <TextBlock Name="tbPath" Text="(no file selected)" Foreground="{DynamicResource TextBrushDim}" FontSize="14" FontWeight="Normal"
+        <TextBlock Name="tbPath" Text="(no file selected)" 
+                   Foreground="{DynamicResource TextBrushDim}" FontSize="14" FontWeight="Normal"
                     VerticalAlignment="Center" HorizontalAlignment="Right" />
       </DockPanel>
       <TextBlock Grid.Column="2" Text="Bruce's Blocks" VerticalAlignment="Center" />
