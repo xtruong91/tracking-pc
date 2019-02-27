@@ -1,6 +1,8 @@
 # tracking
 PC application
 
+![tracking](https://user-images.githubusercontent.com/47490501/53515380-71631800-3afc-11e9-9196-0d0e6aefa111.PNG)
+
 1. View injection that manually add and remove views.
 2. View activation/ deactivation that manually activate and deactive views
 3. Module with App.config  load module using an App.config file
