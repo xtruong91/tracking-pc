@@ -9,114 +9,107 @@
         mc:Ignorable="d"
         Title="{Binding Title}"
         >
-  <Window.Resources>
-    <Style TargetType="TabItem">
-      <Setter Property="Header" Value="{Binding DataContext.Title}" />
-    </Style>
-  </Window.Resources>
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}" />
+        </Style>
+    </Window.Resources>
 
-  <Grid>
-    <Ribbon x:Name="Ribbon" SelectedIndex="0">
-      <!-- Help Pane, located at the right-hand side -->
-      <Ribbon.HelpPaneContent>
-        <RibbonButton SmallImageSource="..\Styles\Images\Ribbon\Alert04.ico" />
-      </Ribbon.HelpPaneContent>
-      <!-- Quick Access Toolbar - located at the upper-left corner -->
-      <Ribbon.QuickAccessToolBar>
-        <RibbonQuickAccessToolBar>
-          <RibbonButton x:Name ="Save" SmallImageSource="..\Styles\Images\Ribbon\SmallIcon.png" />
-          <RibbonSplitButton x:Name ="Undo" SmallImageSource="..\Styles\Images\Ribbon\Plus.ico" >
-            <RibbonSplitMenuItem Header="Undo action #1" />
-            <RibbonSplitMenuItem Header="Undo action #2" />
-            <RibbonSplitMenuItem Header="Undo action #3" />
-          </RibbonSplitButton>
-          <RibbonSplitButton x:Name="Redo" SmallImageSource="..\Styles\Images\Ribbon\Minus.ico" >
-            <RibbonSplitMenuItem Header="Redo action #1" />
-            <RibbonSplitMenuItem Header="Redo action #2" />
-          </RibbonSplitButton>
-        </RibbonQuickAccessToolBar>
-      </Ribbon.QuickAccessToolBar>
-      <!-- Application Menu, located at the left-hand side (down arrow) -->
-      <Ribbon.ApplicationMenu>
-        <RibbonApplicationMenu KeyTip="F">
-          <RibbonApplicationMenuItem Header="Options" ImageSource="..\Styles\Images\Ribbon\.jpg" />
-          <RibbonApplicationMenuItem Header="Exit" ImageSource="Images\Tulips.jpg" />
-        </RibbonApplicationMenu>
-      </Ribbon.ApplicationMenu>
-      <!-- Ribbon Tab #1: Home -->
-      <RibbonTab Header="Home" KeyTip="H" >
-        <!-- Home/Clipboard group-->
-        <RibbonGroup x:Name="ClipboardGroup" Header="Clipboard">
-          <RibbonMenuButton LargeImageSource="Images\Tulips.jpg" Label="Paste" KeyTip="V">
-            <RibbonMenuItem ImageSource="Images\Tulips.jpg" Header="Keep Text Only" KeyTip="T"/>
-            <RibbonMenuItem ImageSource="Images\Tulips.jpg" Header="Paste Special..." KeyTip="S"/>
-          </RibbonMenuButton>
-          <RibbonButton SmallImageSource="Images\Tulips.jpg" Label="Cut" KeyTip="X" />
-          <RibbonButton SmallImageSource="Images\Tulips.jpg" Label="Copy" KeyTip="C" />
-          <RibbonButton SmallImageSource="Images\Tulips.jpg" Label="Format Painter" KeyTip="FP" />
-        </RibbonGroup>
-        <!-- Home/Colors group-->
-        <RibbonGroup x:Name="Color" Header="Colors">
-          <RibbonRadioButton LargeImageSource="Images\Tulips.jpg" Label="Red" KeyTip="R" IsChecked="True"/>
-          <RibbonRadioButton LargeImageSource="Images\Tulips.jpg" Label="Green" KeyTip="G"/>
-          <RibbonRadioButton LargeImageSource="Images\Tulips.jpg" Label="Blue" KeyTip="B"/>
-        </RibbonGroup>
-      </RibbonTab>
-      <!-- Ribbon Tab #2: Launch -->
-      <RibbonTab Header="Launch" KeyTip="L">
-        <!-- Launch/Applications group-->
-        <RibbonGroup x:Name="DesktopApplication" Header="Desktop Applications">
-        </RibbonGroup>
-        <!-- Launch/Games group-->
-        <RibbonGroup x:Name="App" Header="Apps">
-        </RibbonGroup>
-      </RibbonTab>
-    </Ribbon>
-  </Grid>
-  <!--<DockPanel>
-    <Menu DockPanel.Dock="Top">
-      <MenuItem Header="_File">
-        <MenuItem Header="_New" />
-        <MenuItem Header="_Open" />
-        <MenuItem Header="_Save" />
-        <Separator />
-        <MenuItem Header="_Exit" />
-      </MenuItem>
-      <MenuItem Header="_View">
-        <MenuItem Header="_Map" Click="Map_ItemClick" />
-        <MenuItem Header="_Camera" Click="Camera_ItemClick" />
-        <MenuItem Header="_Chart" Click="Char_ItemClick" />
-      </MenuItem>
-
-      <MenuItem Header="_Edit">
-        <MenuItem Header="_Show groups" IsCheckable="True" IsChecked="{Binding IsEnabled}" />
-        <MenuItem Header="_Delete" Command ="{Binding ExecuteDelegateCommand}" />
-        <MenuItem Header="_Undo" Command="{Binding DelegateCommandObservesProperty}" />
-        <MenuItem Header="_Redo" Command="{Binding DelegateCommandObservesCanExecute}" />
-        <Separator />
-        <MenuItem Header="_Exit"  Command="{Binding ExecuteGenericDelegateCommand}" />
-      </MenuItem>
-    </Menu>
-    
     <Grid>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="2*" />
-        <ColumnDefinition Width="8*" />
-        <ColumnDefinition Width="2*"/>
-      </Grid.ColumnDefinitions>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="9*" />
-        <RowDefinition Height="*"/>
-      </Grid.RowDefinitions>
-      <ContentControl Grid.Column="0" prism:RegionManager.RegionName="LeftRegion" />
-      <TabControl Grid.Column="1" Margin="10" prism:RegionManager.RegionName="ContentRegion" />
-      <ContentControl Grid.Column="2" prism:RegionManager.RegionName="RightRegion" />
-
-      <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding UpdateText}" Margin="10" FontSize="22"/>
-      --><!--<StackPanel prism:RegionManager.RegionName="ContentRegion" Grid.Row="0" Background="White" />--><!--
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Ribbon Grid.Row="0" x:Name="Ribbon" SelectedIndex="0">
+            <!-- Help Pane, located at the right-hand side -->
+            <Ribbon.HelpPaneContent>
+                <RibbonButton SmallImageSource="Styles\Images\help.ico" />
+            </Ribbon.HelpPaneContent>
+            <!-- Quick Access Toolbar - located at the upper-left corner -->
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar>
+                    <RibbonButton x:Name ="Save" SmallImageSource="Styles\Images\Ribbon\SmallIcon.png" />
+                    <RibbonSplitButton x:Name ="Undo" SmallImageSource="Styles\Images\Previous-icon.png" >
+                        <RibbonSplitMenuItem Header="Undo action #1" />
+                        <RibbonSplitMenuItem Header="Undo action #2" />
+                    </RibbonSplitButton>
+                    <RibbonSplitButton x:Name="Redo" SmallImageSource="Styles\Images\Next-icon.png" >
+                        <RibbonSplitMenuItem Header="Redo action #1" />
+                        <RibbonSplitMenuItem Header="Redo action #2" />
+                    </RibbonSplitButton>
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
+            <!-- Application Menu, located at the left-hand side (down arrow) -->
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu KeyTip="F">
+                    <RibbonApplicationMenuItem Header="Options" ImageSource="Styles\Images\blockBulb.png" />
+                    <RibbonApplicationMenuItem Header="Exit" ImageSource="Styles\Images\Close-icon.png" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <!-- Ribbon Tab #1: Monitor -->
+            <RibbonTab Header="Monitor" KeyTip="M" >
+                <!-- Home/Clipboard group-->
+                <RibbonGroup x:Name="ClipboardGroup" Header="Clipboard">
+                    <RibbonMenuButton LargeImageSource="Styles\Images\blockCoffee.png" Label="Paste" KeyTip="V"
+                                      >
+                        <RibbonMenuItem ImageSource="Styles\Images\blockCoffee.png" Header="Keep Text Only" KeyTip="T"
+                                        IsChecked="True" Command ="{Binding IsEnabled}"/>
+                        <RibbonMenuItem ImageSource="Styles\Images\blockCoffee.png" Header="Paste Special..." KeyTip="S"
+                                        Command="{Binding ExecuteGenericDelegateCommand}"/>
+                    </RibbonMenuButton>
+                    <RibbonButton SmallImageSource="Styles\Images\cut-icon1.png" Label="Cut" KeyTip="X" 
+                                  Command ="{Binding ExecuteDelegateCommand}" />
+                    <RibbonButton SmallImageSource="Styles\Images\copy-icon.png" Label="Copy" KeyTip="C" 
+                                  Command="{Binding DelegateCommandObservesProperty}"/>
+                    <RibbonButton SmallImageSource="Styles\Images\format.ico" Label="Format Painter" KeyTip="FP" 
+                                  Command="{Binding DelegateCommandObservesCanExecute}" />
+                </RibbonGroup>
+                <!-- Home/Categories group-->
+                <RibbonGroup x:Name="Categories" Header="Categories">
+                    <RibbonRadioButton LargeImageSource="Styles\Images\location-map.png" 
+                                       Label="Map" KeyTip="M" IsChecked="True"
+                                       Click="Map_ItemClick"/>
+                    <RibbonRadioButton LargeImageSource="Styles\Images\camera.png" 
+                                       Label="Camera" KeyTip="C"
+                                       Click="Camera_ItemClick"/>
+                    <RibbonRadioButton LargeImageSource="Styles\Images\chart.png" 
+                                       Label="Chart" KeyTip="Ch"
+                                       Click="Char_ItemClick"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <!-- Ribbon Tab #2: Operation -->
+            <RibbonTab Header="Operation" KeyTip="O">
+                <!-- Launch/Applications group-->
+                <RibbonGroup x:Name="Remote" Header="Remote End Device">
+                </RibbonGroup>
+                <!-- Launch/Games group-->
+                <RibbonGroup x:Name="Board" Header="Connect Board">
+                </RibbonGroup>
+            </RibbonTab>
+            <!-- Ribbon Tab #3: Configuration -->
+            <RibbonTab Header="Configuration" KeyTip="C">
+                <!-- Launch/Applications group-->
+                <RibbonGroup x:Name="Device" Header="Device Setting">
+                </RibbonGroup>
+                <!-- Launch/Games group-->
+                <RibbonGroup x:Name="Connect" Header="Connection">
+                </RibbonGroup>
+            </RibbonTab>
+            <!-- Ribbon Tab #3: Measurement -->
+            <RibbonTab Header="Measurement" KeyTip="D">
+                <!-- Launch/Applications group-->
+                <RibbonGroup x:Name="Measurement" Header="Measurement">
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <DockPanel Grid.Row="1">
+            <ContentControl VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                            prism:RegionManager.RegionName="ContentRegion">
+                
+            </ContentControl>
+            <!--<ContentControl Grid.Column="0" prism:RegionManager.RegionName="LeftRegion" />
+            <TabControl Grid.Column="1" Margin="10" prism:RegionManager.RegionName="ContentRegion" />
+            <ContentControl Grid.Column="2" prism:RegionManager.RegionName="RightRegion" />-->
+        </DockPanel>
     </Grid>
-
-
-  </DockPanel>-->
-
 </Window>

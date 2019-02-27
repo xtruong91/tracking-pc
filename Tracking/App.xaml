@@ -8,8 +8,8 @@
       
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Styles/Light.xaml"/>
-        <ResourceDictionary Source="Styles/Common.xaml"/>
+        <ResourceDictionary Source="Views/Styles/Light.xaml"/>
+        <ResourceDictionary Source="Views/Styles/Common.xaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
          

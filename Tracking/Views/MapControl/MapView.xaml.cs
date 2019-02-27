@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GMap.NET;
+using GMap.NET.MapProviders;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,18 @@ namespace Tracking.Views
     public MapView()
     {
       InitializeComponent();
+      Init();
+    }
+
+    private void Init()
+    {
+      MainMap.MapProvider = GMapProviders.GoogleHybridMap;
+      MainMap.Position = new PointLatLng(54.6961334816182, 25.2985095977783);
+      MainMap.CanDragMap = true;
+      MainMap.DragButton = MouseButton.Left;
+      MainMap.MouseWheelZoomEnabled = true;
+      MainMap.MaxZoom = 24;
+      MainMap.MinZoom = 1;
     }
   }
 }
