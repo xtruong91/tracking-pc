@@ -1,0 +1,17 @@
+﻿<Application x:Class="EnergyManagementSystem.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EnergyManagementSystem"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+      <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Views/UserControls/windows.xaml"/>
+        <ResourceDictionary Source="Views/UserControls/Button.xaml"/>
+        <ResourceDictionary Source="Views/UserControls/TabControl.xaml"/>
+        <ResourceDictionary Source="Views/UserControls/TabItem.xaml"/>
+        <ResourceDictionary Source="Views/UserControls/GlassListBox.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+    </Application.Resources>
+</Application>
