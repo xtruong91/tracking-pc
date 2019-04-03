@@ -1,12 +1,16 @@
-﻿<Window x:Class="AutoTest.Views.MainWindowView"
+﻿<Window 
+        ResxExtension.DefaultResxName="AutoTest.Views.MainWindow" Language="{UICulture}"
+        x:Class="AutoTest.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoTest"
         xmlns:cal="http://www.caliburnproject.org"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Resx AppTitle}" Height="450" Width="800">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="32"/>
@@ -22,9 +26,10 @@
         <ColumnDefinition />
       </Grid.ColumnDefinitions>
 
-      <Image Grid.Column="0" Source="/Assets/Images/blockPalette.png" />
+
       <!-- Left-align path unless it's too long, then right-align -->
       <DockPanel Grid.Column="1" Margin="5,0,20,0" LastChildFill="False">
+
         <TextBlock Name="tbPath" Text="(no file selected)" Foreground="{DynamicResource TextBrushDim}" FontSize="14" FontWeight="Normal"
                     VerticalAlignment="Center" HorizontalAlignment="Right" />
       </DockPanel>
@@ -33,6 +38,7 @@
       <Button Grid.ColumnSpan="4" Background="White" Opacity="0"  />
       <!--PreviewMouseLeftButtonDown="Caption_PreviewMouseLeftButtonDown" MouseDoubleClick="Caption_MouseDoubleClick"-->
       <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+        
         <Button Name="btnLight" Content="Light" Margin="0" Padding="4,0" FontSize="14" IsEnabled="False" ToolTip="Light Skin" />
         <Button Name="btnDark" Content="Dark" Margin="0" Padding="4,0" FontSize="14" ToolTip="Dark Skin" />
         <Button Name="btnAbout" Margin="0" Padding="4,0" FontSize="18" ToolTip="About">
@@ -61,6 +67,21 @@
         </Style>
       </StackPanel.Resources>
 
+      <Menu Width="124" >
+        <MenuItem Header="_Language">
+          <MenuItem Header="_English" cal:Message.Attach="[Event Click] = [Action HandleEnglish($this, $eventArgs)]"/>
+          <MenuItem Header="_Vietnamese" cal:Message.Attach="[Event Click] = [Action HandleVietNamese($this, $eventArgs)]"  />
+          <MenuItem Header="_French" cal:Message.Attach="[Event Click] = [Action HandleFrench($this, $eventArgs)]" />
+        </MenuItem>
+        
+        <MenuItem Header="_File">
+          <MenuItem Header="_New" />
+          <MenuItem Header="_Open" />
+          <MenuItem Header="_Save" />
+          <Separator />
+          <MenuItem Header="_Exit" />
+        </MenuItem>
+      </Menu>
       <Button Name="btnNew" Margin="0" Padding="4" MinWidth="50" ToolTip="Ctrl+N">
         <StackPanel>
           <TextBlock Text="&#xf15b;" FontFamily="{StaticResource FontAwesome}" FontSize="24" HorizontalAlignment="Center" />
@@ -144,7 +165,12 @@
         <ColumnDefinition Width="300" />
       </Grid.ColumnDefinitions>
 
-      <UserControl Name="ccBlockList" Grid.Column="0" />
+      <UserControl Name="ccBlockList" Grid.Column="0">
+        <TextBlock Grid.Column="1"
+                   Height="48"
+                   Name="textTitle"
+                   Text="{Resx AppTitle}"/>
+      </UserControl>
 
       <GridSplitter Grid.Column="1" Width="6" VerticalAlignment="Stretch" HorizontalAlignment="Center" />
 
