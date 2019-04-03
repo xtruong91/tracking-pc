@@ -9,7 +9,10 @@
         <ResourceDictionary>
           <local:AppBootstrapper x:Key="bootstrapper" />
         </ResourceDictionary>
+        <ResourceDictionary Source="Assets/Styles/Light.xaml"/>
+        <ResourceDictionary Source="Assets/Styles/Common.xaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
+
   </Application.Resources>
 </Application>
