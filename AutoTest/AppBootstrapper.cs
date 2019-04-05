@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
+using AutoTest.Common.Input;
 using Caliburn.Micro;
-using Infralution.Localization.Wpf;
 
 namespace AutoTest
 {
@@ -15,25 +10,43 @@ namespace AutoTest
   {
     public AppBootstrapper()
     {
-      Initialize();
-      CultureManager.UICulture = Thread.CurrentThread.CurrentCulture;
-      Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
+      Initialize();     
     }
 
     protected override void OnStartup(object sender, StartupEventArgs e)
     {
       DisplayRootViewFor<ViewModels.MainWindowViewModel>();
     }
-
-    protected override void OnExit(object sender, EventArgs e)
+    protected override void Configure()
     {
-      //CultureManager.UICultureChanged -= HandleUICultureChanged;
-    }
+      var defaultCreateTrigger = Parser.CreateTrigger;
 
-    private void InitilazeCulture(string culture)
-    {
+      Parser.CreateTrigger = (target, triggerText) =>
+      {
+        if (triggerText == null)
+        {
+          return defaultCreateTrigger(target, null);
+        }
 
-      //CultureManager.UICultureChanged += HandleUICultureChanged;
+        var triggerDetail = triggerText
+            .Replace("[", string.Empty)
+            .Replace("]", string.Empty);
+
+        var splits = triggerDetail.Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+
+        switch (splits[0])
+        {
+          case "Key":
+            var key = (Key)Enum.Parse(typeof(Key), splits[1], true);
+            return new KeyTrigger { Key = key };
+
+          case "Gesture":
+            var mkg = (MultiKeyGesture)(new MultiKeyGestureConverter()).ConvertFrom(splits[1]);
+            return new KeyTrigger { Modifiers = mkg.KeySequences[0].Modifiers, Key = mkg.KeySequences[0].Keys[0] };
+        }
+
+        return defaultCreateTrigger(target, triggerText);
+      };
     }
 
 

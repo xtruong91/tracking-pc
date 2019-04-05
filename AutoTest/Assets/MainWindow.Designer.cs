@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AutoTest.Views {
+namespace AutoTest.Assets {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AutoTest.Views {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AutoTest.Views.MainWindow", typeof(MainWindow).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AutoTest.Assets.MainWindow", typeof(MainWindow).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

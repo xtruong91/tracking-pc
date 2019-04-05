@@ -15,7 +15,8 @@
     </Grid.RowDefinitions>
 
     <ListBox Name="listBlocks" Grid.Row="0" Background="{DynamicResource BackgroundBrush2}" VerticalAlignment="Top" SelectionMode="Extended"
-            ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             >
       <!--SelectionChanged="OnSelectionChanged"-->
       <ListBox.ItemsPanel>
         <ItemsPanelTemplate>

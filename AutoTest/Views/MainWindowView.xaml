@@ -1,5 +1,5 @@
 ﻿<Window 
-        ResxExtension.DefaultResxName="AutoTest.Views.MainWindow" Language="{UICulture}"
+        ResxExtension.DefaultResxName="AutoTest.Assets.MainWindow" Language="{UICulture}"
         x:Class="AutoTest.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,7 +8,6 @@
         xmlns:local="clr-namespace:AutoTest"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
-
         mc:Ignorable="d"
         Title="{Resx AppTitle}" Height="450" Width="800">
   <Grid>
@@ -72,14 +71,6 @@
           <MenuItem Header="_English" cal:Message.Attach="[Event Click] = [Action HandleEnglish($this, $eventArgs)]"/>
           <MenuItem Header="_Vietnamese" cal:Message.Attach="[Event Click] = [Action HandleVietNamese($this, $eventArgs)]"  />
           <MenuItem Header="_French" cal:Message.Attach="[Event Click] = [Action HandleFrench($this, $eventArgs)]" />
-        </MenuItem>
-        
-        <MenuItem Header="_File">
-          <MenuItem Header="_New" />
-          <MenuItem Header="_Open" />
-          <MenuItem Header="_Save" />
-          <Separator />
-          <MenuItem Header="_Exit" />
         </MenuItem>
       </Menu>
       <Button Name="btnNew" Margin="0" Padding="4" MinWidth="50" ToolTip="Ctrl+N">
@@ -166,10 +157,21 @@
       </Grid.ColumnDefinitions>
 
       <UserControl Name="ccBlockList" Grid.Column="0">
-        <TextBlock Grid.Column="1"
+
+        <StackPanel Orientation="Vertical">
+          <TextBlock Grid.Column="1"
                    Height="48"
                    Name="textTitle"
-                   Text="{Resx AppTitle}"/>
+                   Text="{Resx AppTitle}"
+                   DataContext="{Binding texBlock, Mode=TwoWay}"/>
+          <TextBox HorizontalAlignment="Left"
+              Width="278"
+              cal:Message.Attach="[Key Enter] = [EnterPressed]; [Gesture Ctrl+Enter] = [CtrlEnterPressed]; [Gesture Alt+Enter] = [AltEnterPressed]">
+          </TextBox>
+          <TextBlock x:Name="EnterMessage"
+                    Text="{Binding EnterMessage}"
+               TextWrapping="WrapWithOverflow" />
+        </StackPanel>
       </UserControl>
 
       <GridSplitter Grid.Column="1" Width="6" VerticalAlignment="Stretch" HorizontalAlignment="Center" />

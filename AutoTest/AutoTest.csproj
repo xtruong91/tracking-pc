@@ -105,6 +105,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="Common\Input\KeySequence.cs" />
+    <Compile Include="Common\Input\KeyTrigger.cs" />
+    <Compile Include="Common\Input\MultiKeyGesture.cs" />
+    <Compile Include="Common\Input\MultiKeyGestureConverter.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Properties\Resources.vi.Designer.cs">
       <DependentUpon>Resources.vi.resx</DependentUpon>
@@ -122,17 +126,17 @@
     <Compile Include="Views\BlockTypes.cs" />
     <Compile Include="Views\DragPanel.cs" />
     <Compile Include="Views\IBlockManager.cs" />
-    <Compile Include="Views\MainWindow.de.Designer.cs">
+    <Compile Include="Assets\MainWindow.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MainWindow.de.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.Designer.cs">
+    <Compile Include="Assets\MainWindow.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MainWindow.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.fr1.Designer.cs">
+    <Compile Include="Assets\MainWindow.fr1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MainWindow.fr.resx</DependentUpon>
@@ -164,15 +168,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainWindow.de.resx">
+    <EmbeddedResource Include="Assets\MainWindow.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MainWindow.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainWindow.fr.resx">
+    <EmbeddedResource Include="Assets\MainWindow.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MainWindow.fr1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainWindow.resx">
+    <EmbeddedResource Include="Assets\MainWindow.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MainWindow.Designer.cs</LastGenOutput>
     </EmbeddedResource>
