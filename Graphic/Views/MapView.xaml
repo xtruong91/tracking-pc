@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Graphic.Views.MapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Graphic.Views"
+             xmlns:map="clr-namespace:Graphic.Views.CustomLib"
+             xmlns:mapBase="clr-namespace:MapControl;assembly=MapControl.WPF"
+             xmlns:geometry="clr-namespace:DynamicGeometry;assembly=DynamicGeometry"
+             xmlns:vm="clr-namespace:Graphic.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+  <UserControl.DataContext>
+    <vm:CustomMapViewModel></vm:CustomMapViewModel>
+</UserControl.DataContext>
+  
+  <Grid>
+    <map:CustomMap x:Name="map" ZoomLevel="11" MaxZoomLevel="20"
+                 Center="{Binding MapCenter}"
+                 MapLayer="{Binding MapLayers.CurrentMapLayer}">
+
+      <mapBase:MapGraticule x:Name="mapGraticule" Opacity="0.6"/>
+      <mapBase:MapScale HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+      <mapBase:Pushpin mapBase:MapPanel.Location="65,-18" Content="Iceland"/>
+      <mapBase:Pushpin mapBase:MapPanel.Location="71,25" Content="Norway"/>
+      <mapBase:Pushpin mapBase:MapPanel.Location="35,33" Content="Cyprus"/>
+      <mapBase:Pushpin mapBase:MapPanel.Location="28.25,-16.5" Content="Tenerife"/>
+    </map:CustomMap>
+
+    <map:CustomDrawing>
+    </map:CustomDrawing>
+    </Grid>
+</UserControl>
