@@ -1,4 +1,12 @@
-﻿Build up MVVM pattern base on Caliburn framework
+﻿
+AutoTest is an apllication. It communicate with measurement device 
+
+1. Read value from mesurement.
+2. Analysis(Pareto, Histogram ...) and export report
+3. Save into database.
+
+
+Build up MVVM pattern base on Caliburn framework
 Query data from sqlserver
 Analysis and statistic data
 Draw Pareto, histogram.
